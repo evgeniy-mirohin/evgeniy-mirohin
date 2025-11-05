@@ -1,5 +1,4 @@
-#@title Полный код бота для самоконтроля
-import aiosqlite
+#Полный код бота
 import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
@@ -13,7 +12,6 @@ logging.basicConfig(level=logging.INFO)
 
 # Замените "YOUR_BOT_TOKEN" на ваш токен
 API_TOKEN = 'YOUR_BOT_TOKEN'
-
 # Объект бота
 bot = Bot(token=API_TOKEN)
 # Диспетчер
@@ -94,10 +92,10 @@ async def cmd_quiz(message: types.Message):
     await new_quiz(message)
 
 async def main():
-
     # Запускаем создание таблицы базы данных
     await create_table()
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
     asyncio.run(main())
+
